@@ -22,6 +22,7 @@
 import argparse
 import sys
 import os
+import datetime
 
 from utils import *
 
@@ -66,6 +67,8 @@ net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
 
 def _main():
+    begin_time = datetime.datetime.now()
+    print(begin_time)
     wind_name = 'face detection using YOLOv3'
     cv2.namedWindow(wind_name, cv2.WINDOW_NORMAL)
 
@@ -148,6 +151,9 @@ def _main():
     cv2.destroyAllWindows()
 
     print('==> All done!')
+    done_time = datetime.datetime.now()
+    print(done_time)
+    print("elapsed: {}".format(done_time - begin_time))
     print('***********************************************************')
 
 
