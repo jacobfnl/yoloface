@@ -56,10 +56,15 @@ $ pip install -r requirements.txt
 
 * Clone this repository
 ```bash
-$ git clone https://github.com/sthanhng/yoloface
+$ git clone https://github.com/jacobfnl/yoloface
 ```
 
-* For face detection, you should download the pre-trained YOLOv3 weights file which trained on the [WIDER FACE: A Face Detection Benchmark](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html) dataset from this [link](https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view?usp=sharing) and place it in the `model-weights/` directory.
+* For face detection, you should download the pre-trained YOLOv3 weights file which trained on the [WIDER FACE: A Face Detection Benchmark](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/index.html) dataset. Run the get_models script to automate download.
+
+>**download models**
+```bash
+chmod 755 get_models.sh; ./get_models.sh
+```
 
 * Run the following command:
 
