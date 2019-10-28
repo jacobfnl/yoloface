@@ -69,6 +69,7 @@ net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 def _main():
     begin_time = datetime.datetime.now()
     print(begin_time)
+    face_count = 0
     wind_name = 'face detection using YOLOv3'
     cv2.namedWindow(wind_name, cv2.WINDOW_NORMAL)
 
@@ -121,6 +122,7 @@ def _main():
 
         # Remove the bounding boxes with low confidence
         faces = post_process(frame, outs, CONF_THRESHOLD, NMS_THRESHOLD)
+        face_count += len(faces)
         print('[i] ==> # detected faces: {}'.format(len(faces)))
         print('#' * 60)
 
@@ -154,6 +156,7 @@ def _main():
     done_time = datetime.datetime.now()
     print(done_time)
     print("elapsed: {}".format(done_time - begin_time))
+    print("faces found: {}".format(face_count))
     print('***********************************************************')
 
 
